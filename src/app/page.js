@@ -1,5 +1,5 @@
 // src/app/page.js
-// updated homepage for Bible Mentor AI
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -13,8 +13,8 @@ export default function HomePage() {
       <nav className="flex justify-between items-center px-6 py-4 bg-white shadow-sm">
         <div className="text-xl font-bold text-blue-900">Bible Mentor AI</div>
         <ul className="flex space-x-6 text-sm font-medium">
-          <li><a href="/" className="text-blue-800 hover:underline">Home</a></li>
-          <li><a href="/dailyword" className="text-blue-800 hover:underline">Daily Word</a></li>
+          <li><Link href="/" className="text-blue-800 hover:underline">Home</Link></li>
+          <li><Link href="/dailyword" className="text-blue-800 hover:underline">Daily Word</Link></li>
           <li><a href="https://analytics.google.com" target="_blank" className="text-blue-800 hover:underline">Analytics</a></li>
           <li><a href="https://www.google.com/search?q=bible+mentor+ai" target="_blank" className="text-blue-800 hover:underline">Google Search</a></li>
         </ul>
@@ -99,7 +99,7 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold mb-4">My Story</h2>
         <div className="bg-white p-6 rounded-md shadow border-l-4 border-blue-900">
           <p className="italic mb-4">
-            “Bible Mentor AI came from a place of personal hunger. I didn’t grow up with strong religious structure, but when I started reading the Bible for myself—especially the Gospel of John—everything changed. I realized faith wasn’t just tradition. It was relationship, truth, and peace. This app is for people like me: curious, searching, and ready to walk with Jesus.”
+            "Bible Mentor AI came from a place of personal hunger. I didn’t grow up with strong religious structure, but when I started reading the Bible for myself—especially the Gospel of John—everything changed. I realized faith wasn’t just tradition. It was relationship, truth, and peace. This app is for people like me: curious, searching, and ready to walk with Jesus."
           </p>
           <p className="font-semibold text-blue-900">— Mark Houston, Founder</p>
         </div>
