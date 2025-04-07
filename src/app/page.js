@@ -14,12 +14,12 @@ export default function HomePage() {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-6 py-4 bg-white shadow-sm">
         <div className="text-xl font-bold text-blue-900">Bible Mentor AI</div>
-        <ul className="flex space-x-6 text-sm font-medium">
-          <li><Link href="/" className="text-blue-800 hover:underline">Home</Link></li>
-          <li><Link href="/dailyword" className="text-blue-800 hover:underline">Daily Word</Link></li>
-          <li><a href="https://analytics.google.com" target="_blank" className="text-blue-800 hover:underline">Analytics</a></li>
-          <li><a href="https://www.google.com/search?q=bible+mentor+ai" target="_blank" className="text-blue-800 hover:underline">Google Search</a></li>
-        </ul>
+          <ul className="flex space-x-6 text-sm font-medium">
+            <li><Link href="/" className="text-blue-800 hover:underline">Home</Link></li>
+            <li><Link href="/dailyword" className="text-blue-800 hover:underline">Daily Word</Link></li>
+            <li><a href="https://analytics.google.com" target="_blank" className="text-blue-800 hover:underline">Analytics</a></li>
+            <li><a href="https://www.google.com/search?q=bible+mentor+ai" target="_blank" className="text-blue-800 hover:underline">Google Search</a></li>
+          </ul>
       </nav>
 
       <section className="bg-gradient-to-br from-gray-100 to-blue-50 py-20 text-center relative">
