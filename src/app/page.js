@@ -1,4 +1,5 @@
 // src/app/page.js
+// updated homepage for Bible Mentor AI
 
 export default function HomePage() {
   return (
