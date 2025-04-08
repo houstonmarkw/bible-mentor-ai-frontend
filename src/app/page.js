@@ -101,7 +101,7 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold mb-4">My Story</h2>
         <div className="bg-white p-6 rounded-md shadow border-l-4 border-blue-900">
           <p className="italic mb-4">
-            "Bible Mentor AI came from a place of personal hunger. I didn't grow up with strong religious structure, but when I started reading the Bible for myself — especially the Gospel of John — everything changed. I realized faith wasn't just tradition. It was relationship, truth, and peace. This app is for people like me: curious, searching, and ready to walk with Jesus."
+           "Bible Mentor AI came from a place of personal hunger. I didn't grow up with a strong religious structure, but when I started reading the Bible for myself, especially the Gospel of John, everything changed. I realized faith wasn't just tradition. It was relationship, truth, and peace. This app is for peoople like me: curious, searching, and ready to walk with Jesus."
           </p>
           <p className="font-semibold text-blue-900">— Mark Houston, Founder</p>
         </div>
