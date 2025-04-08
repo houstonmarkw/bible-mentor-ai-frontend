@@ -2,6 +2,11 @@
 // final version with all unescaped quotes replaced for Vercel
 
 import Link from "next/link";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Differentiators from "./components/Differentiators";
+import GetInvolved from "./components/GetInvolved";
+import Footer from "./components/Footer";
 
 export default function HomePage() {
   return (
@@ -110,6 +115,14 @@ export default function HomePage() {
       <footer className="text-center py-8 text-sm text-gray-500">
         &copy; 2025 Bible Mentor AI. All rights reserved.
       </footer>
+          {/* 🔥 New Extended Sections from components */}
+          <div className="bg-white">
+            <Hero />
+            <About />
+            <Differentiators />
+            <GetInvolved />
+            <Footer />
+          </div>
     </main>
   );
 }
