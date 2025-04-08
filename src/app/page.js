@@ -65,15 +65,15 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold mb-6 text-center">What You&apos;ll Experience</h2>
         <div className="grid gap-6 md:grid-cols-3">
           <div className="bg-white p-6 rounded-md shadow">
-            <h3 className="text-lg font-semibold mb-2">🕊️ Daily Word</h3>
+            <h3 className="text-lg font-semibold mb-2">Daily Word</h3>
             <p>Wake up to a devotional personalized to your current walk — directly rooted in Scripture.</p>
           </div>
           <div className="bg-white p-6 rounded-md shadow">
-            <h3 className="text-lg font-semibold mb-2">💬 Ask Your Mentor</h3>
+            <h3 className="text-lg font-semibold mb-2">Ask Your Mentor</h3>
             <p>Explore faith questions in a judgment-free zone — Bible Mentor gives clear, loving answers.</p>
           </div>
           <div className="bg-white p-6 rounded-md shadow">
-            <h3 className="text-lg font-semibold mb-2">🌱 Grace → Growth</h3>
+            <h3 className="text-lg font-semibold mb-2">Grace → Growth</h3>
             <p>Track your spiritual journey with practical steps and personal reflection moments.</p>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="px-6 py-16 max-w-2xl mx-auto">
         <h2 className="text-2xl font-bold mb-4 text-center">Join the Waitlist</h2>
         <form
-          action="https://formspree.io/f/mgvanqol"
+          action="https://formspree.io/f/mgvanqol?redirect=https://biblementorai.org/waitlist-thank-you"
           method="POST"
           className="bg-white p-6 rounded-md shadow-md"
         >
