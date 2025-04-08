@@ -1,5 +1,5 @@
 // src/app/page.js
-// final linter-safe version for Bible Mentor AI homepage
+// final version with all unescaped quotes replaced for Vercel
 
 import Link from "next/link";
 
@@ -51,13 +51,13 @@ export default function HomePage() {
       <section className="px-6 py-16 max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
         <p className="mb-4">
-          Bible Mentor AI was built for people who want more than just a daily verse. Whether you are just starting your journey with Christ or growing deeper in faith, our tools meet you where you are — every day. We pair spiritual mentorship with modern technology to make faith feel real, actionable, and deeply personal.
+          Bible Mentor AI was built for people who want more than just a daily verse. Whether you&apos;re just starting your journey with Christ or growing deeper in faith, our tools meet you where you are — every day. We pair spiritual mentorship with modern technology to make faith feel real, actionable, and deeply personal.
         </p>
         <p><strong>App Release:</strong> Q4 2025</p>
       </section>
 
       <section className="px-6 py-16 max-w-5xl mx-auto bg-white rounded-xl shadow-sm">
-        <h2 className="text-2xl font-bold mb-6 text-center">What You'll Experience</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">What You&apos;ll Experience</h2>
         <div className="grid gap-6 md:grid-cols-3">
           <div className="bg-white p-6 rounded-md shadow">
             <h3 className="text-lg font-semibold mb-2">🕊️ Daily Word</h3>
@@ -101,7 +101,7 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold mb-4">My Story</h2>
         <div className="bg-white p-6 rounded-md shadow border-l-4 border-blue-900">
           <p className="italic mb-4">
-           "Bible Mentor AI came from a place of personal hunger. I didn't grow up with a strong religious structure, but when I started reading the Bible for myself, especially the Gospel of John, everything changed. I realized faith wasn't just tradition. It was relationship, truth, and peace. This app is for peoople like me: curious, searching, and ready to walk with Jesus."
+            &quot;Bible Mentor AI came from a place of personal hunger. I didn&apos;t grow up with strong religious structure, but when I started reading the Bible for myself — especially the Gospel of John — everything changed. I realized faith wasn&apos;t just tradition. It was relationship, truth, and peace. This app is for people like me: curious, searching, and ready to walk with Jesus.&quot;
           </p>
           <p className="font-semibold text-blue-900">— Mark Houston, Founder</p>
         </div>
