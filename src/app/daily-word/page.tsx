@@ -21,6 +21,7 @@ export default function DailyWordPage() {
         const res = await fetch(
           'https://raw.githubusercontent.com/houstonmarkw/bible-mentor-ai-frontend/main/data/daily-word-collection.json'
         );
+        if (!res.ok) throw new Error('Failed to fetch JSON');
         const fullList: DailyWord[] = await res.json();
 
         const dayOfYear = Math.floor(
@@ -32,6 +33,7 @@ export default function DailyWordPage() {
         const index = dayOfYear % fullList.length;
         setEntry(fullList[index]);
       } catch (e) {
+        console.error('Error fetching Daily Word JSON:', e);
         setError(true);
       }
     };
