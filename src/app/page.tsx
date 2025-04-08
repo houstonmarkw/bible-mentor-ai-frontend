@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -95,12 +96,12 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          <a
-            href="#waitlist"
+          <Link
+            href="/get-involved"
             className="inline-block mt-12 px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-900 transition"
           >
             Start Your Journey
-          </a>
+          </Link>
         </div>
       </motion.section>
 
@@ -116,9 +117,7 @@ export default function Home() {
         <h4 className="text-xl font-semibold text-blue-800 mb-4">Bible Mentor AI app coming Q4 2025 — stay tuned!</h4>
         <p className="text-gray-600">
           Join our waitlist or contact us directly at{' '}
-          <a href="mailto:support@biblementorai.org" className="underline">
-            support@biblementorai.org
-          </a>
+          <a href="mailto:support@biblementorai.org" className="underline">support@biblementorai.org</a>
         </p>
       </motion.section>
     </div>
