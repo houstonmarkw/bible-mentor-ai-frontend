@@ -1,4 +1,3 @@
-// page.tsx — Animated homepage with Framer Motion
 'use client';
 
 import Image from 'next/image';
@@ -38,7 +37,7 @@ export default function Home() {
           Personalized devotionals, daily Bible study, and spiritual mentorship — delivered through intelligent guidance rooted in Scripture.
         </p>
         <a
-          href="#waitlist"
+          href="mailto:support@biblementorai.org"
           className="inline-block mt-8 px-8 py-4 bg-blue-700 text-white font-semibold rounded-full shadow-lg hover:bg-blue-800 transition"
         >
           Contact Us
@@ -117,10 +116,11 @@ export default function Home() {
         <h4 className="text-xl font-semibold text-blue-800 mb-4">Bible Mentor AI app coming Q4 2025 — stay tuned!</h4>
         <p className="text-gray-600">
           Join our waitlist or contact us directly at{' '}
-          <a href="mailto:markhouston@biblementorai.org" className="underline">markhouston@biblementorai.org</a>
+          <a href="mailto:support@biblementorai.org" className="underline">
+            support@biblementorai.org
+          </a>
         </p>
       </motion.section>
     </div>
   );
 }
-
