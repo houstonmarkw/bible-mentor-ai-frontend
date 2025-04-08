@@ -19,18 +19,18 @@ export default function Navbar() {
           ☰
         </button>
         <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
           <a href="#about">About</a>
           <a href="#differentiator">What Makes Us Different</a>
-          <a href="/daily-word">Daily Word</a>
+          <Link href="/daily-word">Daily Word</Link>
         </nav>
       </div>
       {isOpen && (
         <div className="md:hidden bg-white border-t px-4 pb-4 space-y-3 text-gray-700 font-medium">
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
           <a href="#about">About</a>
           <a href="#differentiator">What Makes Us Different</a>
-          <a href="/daily-word">Daily Word</a>
+          <Link href="/daily-word">Daily Word</Link>
         </div>
       )}
     </header>
