@@ -23,6 +23,7 @@ export default function Navbar() {
           <a href="#about">About</a>
           <a href="#differentiator">What Makes Us Different</a>
           <Link href="/daily-word">Daily Word</Link>
+          <Link href="/get-involved">Get Involved</Link>
         </nav>
       </div>
       {isOpen && (
@@ -31,6 +32,7 @@ export default function Navbar() {
           <a href="#about">About</a>
           <a href="#differentiator">What Makes Us Different</a>
           <Link href="/daily-word">Daily Word</Link>
+          <Link href="/get-involved">Get Involved</Link>
         </div>
       )}
     </header>

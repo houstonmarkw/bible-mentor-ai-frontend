@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const GetInvolved = () => {
@@ -9,13 +8,15 @@ const GetInvolved = () => {
           Get Involved
         </h2>
         <p className="text-lg text-gray-700 mb-6 text-center">
-          Want to help shape what Bible Mentor AI becomes? Fill out the form below to let us know how you'd like to be part of the journey. We're always welcoming believers who want to contribute through prayer, testing, writing, giving, or church connections.
+          Want to help shape what Bible Mentor AI becomes? Fill out the form below to let us know how you&apos;d like to be part of the journey. We&apos;re always welcoming believers who want to contribute through prayer, testing, writing, giving, or church connections.
         </p>
         <form
           action="https://formspree.io/f/xblgpwao"
           method="POST"
           className="space-y-6"
         >
+          <input type="hidden" name="_subject" value="New Get Involved Submission from BibleMentorAI.org" />
+
           <div>
             <label htmlFor="name" className="block text-gray-800 font-medium">
               Name *
@@ -25,6 +26,7 @@ const GetInvolved = () => {
               id="name"
               name="name"
               required
+              autoComplete="off"
               className="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
             />
           </div>
@@ -38,6 +40,7 @@ const GetInvolved = () => {
               id="email"
               name="_replyto"
               required
+              autoComplete="off"
               className="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
             />
           </div>
