@@ -58,7 +58,7 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-bold text-blue-800 mb-4">About Bible Mentor AI</h3>
             <p className="text-gray-700 leading-relaxed">
-              Bible Mentor AI was built for people who want more than just a daily verse. Whether you're just starting your journey with Christ or growing deeper in faith, our tools meet you where you are — every day.
+              Bible Mentor AI was built for people who want more than just a daily verse. Whether you&apos;re just starting your journey with Christ or growing deeper in faith, our tools meet you where you are — every day.
               We pair spiritual mentorship with modern technology to make faith feel real, actionable, and deeply personal.
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 text-left">
             {[{
               title: 'Guided, Not Replaced',
-              desc: "We support your walk with Christ — not automate it. We're not here to replace pastors or prayer, but to point you to the Word daily."
+              desc: "We support your walk with Christ — not automate it. We&apos;re not here to replace pastors or prayer, but to point you to the Word daily."
             }, {
               title: 'Daily, Not Sporadic',
               desc: "Devotion is a rhythm. Our tools guide you day by day, reinforcing spiritual growth through consistency and grace."
