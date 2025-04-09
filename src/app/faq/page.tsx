@@ -44,4 +44,4 @@ export default function FAQPage() {
     },
     {
       q: 'How can I give feedback or ask for spiritual help?',
-      a: 'You can reach out through our contact form or submit questions directly through the app. We
+        a: 'You can reach out through our contact form or submit questions directly through the app. We’re here to help you grow and walk closer with Jesus.'
