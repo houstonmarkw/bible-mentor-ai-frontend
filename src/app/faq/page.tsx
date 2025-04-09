@@ -44,4 +44,25 @@ export default function FAQPage() {
     },
     {
       q: 'How can I give feedback or ask for spiritual help?',
-        a: 'You can reach out through our contact form or submit questions directly through the app. We’re here to help you grow and walk closer with Jesus.'
+      a: 'You can reach out through our contact form or submit questions directly through the app. We’re here to help you grow and walk closer with Jesus.'
+    }
+  ];
+
+  return (
+    <section className="bg-white min-h-screen px-6 py-16">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-blue-800 mb-10 text-center">Spiritual FAQ</h1>
+        {qa.map((item, idx) => (
+          <div key={idx} className="mb-8">
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Q: {item.q}</h3>
+            <p className="text-gray-700">{item.a}</p>
+          </div>
+        ))}
+        <p className="text-center text-sm text-gray-500 mt-12">
+          Learn. Carry. Follow. <br />
+          <span className="font-medium text-blue-700">Bible Mentor AI:</span> Guiding you through the Word, in the Word, and with the Word.
+        </p>
+      </div>
+    </section>
+  );
+}
