@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-blue-800 mb-8 text-center">Privacy Policy</h1>
 
-        <p className="text-sm text-gray-500 mb-10 text-center">Effective Date: [Insert Launch Date]</p>
+        <p className="text-sm text-gray-500 mb-10 text-center">Effective Date: [April 9, 2025]</p>
 
         <p className="text-gray-700 mb-6">
           Bible Mentor AI LLC (“we,” “us,” “our”) respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use the Bible Mentor AI app (“the App”).
