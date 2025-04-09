@@ -26,15 +26,17 @@ export default function Navbar() {
           <Link href="/get-involved">Get Involved</Link>
         </nav>
       </div>
-      {isOpen && (
-        <div className="md:hidden bg-white border-t px-4 pb-4 space-y-3 text-gray-700 font-medium">
-          <Link href="/">Home</Link>
-          <a href="#about">About</a>
-          <a href="#differentiator">What Makes Us Different</a>
-          <Link href="/daily-word">Daily Word</Link>
-          <Link href="/get-involved">Get Involved</Link>
-        </div>
-      )}
+          {isOpen && (
+            <div className="md:hidden bg-white border-t px-4 pb-4 text-gray-700 font-medium">
+              <div className="flex flex-col space-y-4 pt-4">
+                <Link href="/">Home</Link>
+                <Link href="/about">About</Link>
+                <a href="#differentiator">What Makes Us Different</a>
+                <Link href="/daily-word">Daily Word</Link>
+                <Link href="/get-involved">Get Involved</Link>
+              </div>
+            </div>
+          )}
     </header>
   );
 }
