@@ -21,19 +21,24 @@ export default function DailyWordPage() {
         const res = await fetch(
           'https://raw.githubusercontent.com/houstonmarkw/bible-mentor-ai-frontend/main/data/daily-word-collection.json'
         );
-        if (!res.ok) throw new Error('Failed to fetch JSON');
-        const fullList: DailyWord[] = await res.json();
+        console.log('Fetch status:', res.status);
+
+        const text = await res.text();
+        console.log('Raw fetched text (first 300 chars):', text.slice(0, 300));
+
+        const fullList: DailyWord[] = JSON.parse(text);
 
         const dayOfYear = Math.floor(
-          (new Date().getTime() -
-            new Date(new Date().getFullYear(), 0, 0).getTime()) /
-            (1000 * 60 * 60 * 24)
+          (new Date().getTime() - new Date(new Date().getFullYear(), 0, 0).getTime()) /
+          (1000 * 60 * 60 * 24)
         );
 
         const index = dayOfYear % fullList.length;
+        console.log('Rotated index:', index);
+
         setEntry(fullList[index]);
       } catch (e) {
-        console.error('Error fetching Daily Word JSON:', e);
+        console.error('Final Fetch Error:', e);
         setError(true);
       }
     };
