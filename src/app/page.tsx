@@ -45,28 +45,25 @@ export default function Home() {
         </a>
       </motion.section>
 
-      {/* About Section */}
-      <motion.section
-        id="about"
-        className="py-20 px-6 bg-white"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-3xl font-bold text-blue-800 mb-4">About Bible Mentor AI</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Bible Mentor AI was built for people who want more than just a daily verse. Whether you&apos;re just starting your journey with Christ or growing deeper in faith, our tools meet you where you are — every day.
-              We pair spiritual mentorship with modern technology to make faith feel real, actionable, and deeply personal.
-            </p>
-          </div>
-          <div className="hidden md:block">
-            <Image src="/about-illustration.svg" alt="About" width={480} height={360} />
-          </div>
-        </div>
-      </motion.section>
+          {/* About Section */}
+          <motion.section
+            id="about"
+            className="py-20 px-6 bg-white"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl font-bold text-blue-800 mb-4">About Bible Mentor AI</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Bible Mentor AI was built for people who want more than just a daily verse. Whether you&apos;re just starting your journey with Christ or growing deeper in faith, our tools meet you where you are — every day.
+                  We pair spiritual mentorship with modern technology to make faith feel real, actionable, and deeply personal.
+                </p>
+              </div>
+            </div>
+          </motion.section>
 
       {/* Differentiator Section */}
       <motion.section
