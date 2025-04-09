@@ -20,7 +20,7 @@ export default function Navbar() {
         </button>
         <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
           <Link href="/">Home</Link>
-          <a href="#about">About</a>
+          <Link href="/about">About</Link>
           <a href="#differentiator">What Makes Us Different</a>
           <Link href="/daily-word">Daily Word</Link>
           <Link href="/get-involved">Get Involved</Link>
