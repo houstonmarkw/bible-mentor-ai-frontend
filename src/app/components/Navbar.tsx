@@ -21,7 +21,6 @@ export default function Navbar() {
         <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
-          <a href="#differentiator">What Makes Us Different</a>
           <Link href="/daily-word">Daily Word</Link>
           <Link href="/get-involved">Get Involved</Link>
         </nav>
@@ -31,7 +30,6 @@ export default function Navbar() {
               <div className="flex flex-col space-y-4 pt-4">
                 <Link href="/">Home</Link>
                 <Link href="/about">About</Link>
-                <a href="#differentiator">What Makes Us Different</a>
                 <Link href="/daily-word">Daily Word</Link>
                 <Link href="/get-involved">Get Involved</Link>
               </div>
