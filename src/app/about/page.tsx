@@ -4,7 +4,7 @@ export default function AboutPage() {
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-blue-800 mb-6">About Bible Mentor AI</h1>
         <p className="text-gray-700 text-lg leading-relaxed">
-          Bible Mentor AI exists to make spiritual growth feel natural, personal, and consistent. We believe that knowing Jesus is the most important relationship a person can have—and that the journey of faith is meant to be walked daily, with help. Our AI-powered mentor is designed to guide users through the Bible, offer thoughtful devotionals, answer questions with biblical insight, and support each person’s walk with God through meaningful reflection and learning.
+          Bible Mentor AI exists to make spiritual growth feel natural, personal, and consistent. We believe that knowing Jesus is the most important relationship a person can have—and that the journey of faith is meant to be walked daily, with help. Our AI-powered mentor is designed to guide users through the Bible, offer thoughtful devotionals, answer questions with biblical insight, and support each person’s walk with God through meaningful reflection and learning. We want our Bible Mentor to grow with you as your faith grows.
         </p>
 
         <p className="text-gray-700 text-lg leading-relaxed mt-6">
@@ -13,10 +13,10 @@ export default function AboutPage() {
 
         <h2 className="text-2xl font-semibold text-blue-700 mt-10 mb-4">Why We Built This</h2>
         <p className="text-gray-700 text-lg leading-relaxed">
-          Bible Mentor AI started as a simple idea: <em>What if your Bible study could feel like a conversation—one that actually helped you grow?</em>
+          Bible Mentor AI started as a simple idea: <em>What if your Bible study could feel like a conversation—one that actually helped you grow? One that remembered your successes and struggles? </em>
         </p>
         <p className="text-gray-700 text-lg leading-relaxed mt-4">
-          Founder Mark Houston began reading the Bible deeply for the first time in 2025 and found himself transformed. He realized that faith isn’t about performing religion—it’s about knowing Jesus. Built from both conviction and calling, Bible Mentor AI is a witness to the living Word—offering guidance, clarity, and peace in a noisy world.
+          Founder, Mark Houston, began reading the Bible deeply for the first time in 2025 and found himself transformed. He realized that faith isn’t about performing religion—it’s about knowing Jesus. Built from both conviction and calling, Bible Mentor AI is a witness to the living Word—offering guidance, clarity, and peace in a noisy world.
         </p>
 
         <h2 className="text-2xl font-semibold text-blue-700 mt-10 mb-4">What We Offer</h2>
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
         <h2 className="text-2xl font-semibold text-blue-700 mt-10 mb-4">From the Founder</h2>
         <blockquote className="text-gray-700 text-lg italic leading-relaxed">
-          “This project is part of my witness. I built Bible Mentor AI not as a replacement for the church, but as a reminder that Jesus is with us every day—and we can talk to Him, learn from Him, and follow Him in our real lives. I pray this tool helps you do just that.”<br />
+          “I built Bible Mentor AI not as a replacement for the church, but as a reminder that Jesus is with us every day—and we can talk to Him, learn from Him, and follow Him in our real lives. I pray this tool helps you do just that.”<br />
           — Mark Houston, Creator of Bible Mentor AI
         </blockquote>
       </div>
