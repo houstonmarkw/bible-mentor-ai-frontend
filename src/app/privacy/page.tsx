@@ -6,12 +6,12 @@ export default function PrivacyPolicyPage() {
         <p className="text-sm text-gray-500 mb-10 text-center">Effective Date: April 10, 2025</p>
 
         <p className="text-gray-700 mb-6">
-          Bible Mentor AI LLC (“we,” “us,” “our”) is committed to protecting your privacy and honoring the sacred nature of your faith journey. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Bible Mentor AI app (“the App”).
+          Bible Mentor AI LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) is committed to protecting your privacy and honoring the sacred nature of your faith journey. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Bible Mentor AI app (&ldquo;the App&rdquo;).
         </p>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">1. Purpose of Data Collection</h2>
         <p className="text-gray-700 mb-6">
-          We collect personal data solely to support your spiritual growth, track your devotional progress, and deliver a personalized faith-based experience. Your reflections, verse highlights, prayer notes, and spiritual milestones are stored securely to help guide your walk with Christ—not for marketing or behavioral profiling.
+          We collect personal data solely to support your spiritual growth, track your devotional progress, and deliver a personalized faith-based experience. Your reflections, verse highlights, prayer notes, and spiritual milestones are stored securely to help guide your walk with Christ&mdash;not for marketing or behavioral profiling.
         </p>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">2. What Data We Collect</h2>
@@ -32,12 +32,12 @@ export default function PrivacyPolicyPage() {
           <li>Deliver personalized devotional content</li>
           <li>Remember and track your spiritual progress</li>
           <li>Enable reminders and content suggestions</li>
-          <li>Improve the app's spiritual tools and experience</li>
+          <li>Improve the app&apos;s spiritual tools and experience</li>
         </ul>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">4. AI Interactions</h2>
         <p className="text-gray-700 mb-6">
-          Bible Mentor AI uses AI to guide study, offer mentorship prompts, and generate devotionals. Interactions are processed by OpenAI, but long-term user data is not stored by OpenAI. All reflections and memory are stored only in our secure Firebase Firestore database, linked to your user ID.
+          Bible Mentor AI uses artificial intelligence to guide study, offer mentorship prompts, and generate devotionals. Interactions are processed by OpenAI, but long-term user data is not stored by OpenAI. All reflections and memory are stored only in our secure Firebase Firestore database, linked to your user ID.
         </p>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">5. Data Storage & Security</h2>
@@ -64,10 +64,10 @@ export default function PrivacyPolicyPage() {
           <li>Manage reminder and notification preferences</li>
         </ul>
         <p className="text-gray-700 mt-2">
-          These tools are available through the “My Journey” section of the App. You’re always in control.
+          These tools are available through the &ldquo;My Journey&rdquo; section of the App. You&apos;re always in control.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">8. Children’s Privacy</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">8. Children&rsquo;s Privacy</h2>
         <p className="text-gray-700">
           Bible Mentor AI is not intended for children under 13. All accounts must be created by adults. If your family uses the App together, we recommend doing so with parental guidance. We comply with COPPA and related protections.
         </p>
@@ -89,12 +89,12 @@ export default function PrivacyPolicyPage() {
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">11. Contact</h2>
         <p className="text-gray-700">
-          If you have any questions or concerns about your data, please contact:<br />
+          If you have questions about this Privacy Policy, please contact:<br />
           <a href="mailto:support@biblementorai.org" className="text-blue-700 underline">support@biblementorai.org</a>
         </p>
 
         <p className="text-center text-sm text-gray-500 mt-12">
-          In faith, privacy is a promise. Your journey is personal. We’re here to support it—not surveil it.
+          In faith, privacy is a promise. Your journey is personal. We&rsquo;re here to support it&mdash;not surveil it.
         </p>
       </div>
     </section>
