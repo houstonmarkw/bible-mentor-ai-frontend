@@ -3,91 +3,98 @@ export default function PrivacyPolicyPage() {
     <section className="bg-white min-h-screen px-6 py-16">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-blue-800 mb-8 text-center">Privacy Policy</h1>
-
-        <p className="text-sm text-gray-500 mb-10 text-center">Effective Date: [April 9, 2025]</p>
+        <p className="text-sm text-gray-500 mb-10 text-center">Effective Date: April 10, 2025</p>
 
         <p className="text-gray-700 mb-6">
-          Bible Mentor AI LLC (“we,” “us,” “our”) respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use the Bible Mentor AI app (“the App”).
+          Bible Mentor AI LLC (“we,” “us,” “our”) is committed to protecting your privacy and honoring the sacred nature of your faith journey. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Bible Mentor AI app (“the App”).
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">1. Information We Collect</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">1. Purpose of Data Collection</h2>
+        <p className="text-gray-700 mb-6">
+          We collect personal data solely to support your spiritual growth, track your devotional progress, and deliver a personalized faith-based experience. Your reflections, verse highlights, prayer notes, and spiritual milestones are stored securely to help guide your walk with Christ—not for marketing or behavioral profiling.
+        </p>
+
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">2. What Data We Collect</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>Your first name or display name (optional)</li>
-          <li>Your faith journey preferences (e.g., devotional track)</li>
-          <li>Questions or messages you send to the AI</li>
-          <li>Anonymous usage data (e.g., which features you use)</li>
+          <li>Your name and email (for account registration and communication)</li>
+          <li>Reflections and journal entries</li>
+          <li>Devotional progress and track selections</li>
+          <li>Verse highlights, notes, and tags</li>
+          <li>User preferences (e.g., reminder type, theme settings)</li>
+          <li>Usage metadata (e.g., timestamps, feature use) via Firebase</li>
         </ul>
         <p className="text-gray-700 mt-2">
-          We do not ask for sensitive personal information such as health data, financial details, or passwords.
+          We do not collect biometric or financial information.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">2. How We Use Your Information</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">3. How We Use Your Data</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>Provide personalized devotionals and guidance</li>
-          <li>Improve the App experience for all users</li>
-          <li>Respond to user questions or support requests</li>
-          <li>Track engagement with devotional content and features</li>
+          <li>Deliver personalized devotional content</li>
+          <li>Remember and track your spiritual progress</li>
+          <li>Enable reminders and content suggestions</li>
+          <li>Improve the app's spiritual tools and experience</li>
+        </ul>
+
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">4. AI Interactions</h2>
+        <p className="text-gray-700 mb-6">
+          Bible Mentor AI uses AI to guide study, offer mentorship prompts, and generate devotionals. Interactions are processed by OpenAI, but long-term user data is not stored by OpenAI. All reflections and memory are stored only in our secure Firebase Firestore database, linked to your user ID.
+        </p>
+
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">5. Data Storage & Security</h2>
+        <p className="text-gray-700 mb-6">
+          Your data is stored using Google Firebase and Firestore, both of which meet industry-standard encryption protocols. Access is protected by Firebase Authentication. Only you (and optionally our support team, with permission) can access your data.
+        </p>
+
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">6. Third-Party Services</h2>
+        <p className="text-gray-700 mb-2">We use trusted services, including:</p>
+        <ul className="list-disc list-inside text-gray-700 space-y-2">
+          <li>Firebase (Authentication, Firestore, Hosting)</li>
+          <li>Formspree (for contact form submission)</li>
+          <li>GitHub (for devotional content hosting)</li>
         </ul>
         <p className="text-gray-700 mt-2">
-          Your data may be used anonymously to help refine the AI’s performance and improve future features.
+          These services do not sell or retain ownership of your data. No advertising or tracking cookies are used.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">3. Third-Party Services</h2>
-        <p className="text-gray-700 mb-2">
-          We use trusted platforms like:
-        </p>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">7. User Controls and Rights</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>Glide (for app development)</li>
-          <li>OpenAI (for language generation)</li>
-          <li>Google Sheets or Firebase (for backend storage, if applicable)</li>
+          <li>Edit, tag, or delete reflections</li>
+          <li>Highlight or remove verse notes</li>
+          <li>Request a data export or account deletion</li>
+          <li>Manage reminder and notification preferences</li>
         </ul>
         <p className="text-gray-700 mt-2">
-          These services may process data on our behalf but do not own or sell your information.
+          These tools are available through the “My Journey” section of the App. You’re always in control.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">4. Cookies & Tracking</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">8. Children’s Privacy</h2>
         <p className="text-gray-700">
-          If you access the App via a web browser, basic cookies or similar technologies may be used to remember your settings or track app performance. No targeted advertising cookies are used.
+          Bible Mentor AI is not intended for children under 13. All accounts must be created by adults. If your family uses the App together, we recommend doing so with parental guidance. We comply with COPPA and related protections.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">5. Data Security</h2>
-        <p className="text-gray-700">
-          We take reasonable measures to secure your data, but no system is 100% secure. Do not share sensitive information through the App.
-        </p>
-
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">6. Data Retention</h2>
-        <p className="text-gray-700">
-          We retain user data only as long as needed for app functionality, improvement, or user support. You may request deletion of your data by contacting us.
-        </p>
-
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">7. Children’s Privacy</h2>
-        <p className="text-gray-700">
-          The App is intended for users 13 years and older. If you are under 18, please use the App with parental or guardian supervision.
-        </p>
-
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">8. Your Rights (GDPR & California Residents)</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">9. Your Rights (GDPR & California Residents)</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>Access, correct, or delete your data</li>
+          <li>Request access, correction, or deletion of your data</li>
           <li>Withdraw consent at any time</li>
-          <li>Request a copy of your personal data</li>
+          <li>Request a copy of your personal information</li>
         </ul>
         <p className="text-gray-700 mt-2">
-          To make a request, contact us at <a href="mailto:support@biblementorai.org" className="text-blue-700 underline">support@biblementorai.org</a>.
+          To make a request, email us at <a href="mailto:support@biblementorai.org" className="text-blue-700 underline">support@biblementorai.org</a>.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">9. Policy Updates</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">10. Policy Updates</h2>
         <p className="text-gray-700">
-          We may update this Privacy Policy from time to time. Changes will be posted in the App. Continued use after changes means you accept the revised policy.
+          We may revise this Privacy Policy as the App evolves. We will post all changes in the App. Continued use after changes means you accept the updated policy.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">10. Contact</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">11. Contact</h2>
         <p className="text-gray-700">
-          If you have questions about this Privacy Policy or your data, contact: <br />
+          If you have any questions or concerns about your data, please contact:<br />
           <a href="mailto:support@biblementorai.org" className="text-blue-700 underline">support@biblementorai.org</a>
         </p>
 
         <p className="text-center text-sm text-gray-500 mt-12">
-          Thank you for trusting Bible Mentor AI with your spiritual journey.
+          In faith, privacy is a promise. Your journey is personal. We’re here to support it—not surveil it.
         </p>
       </div>
     </section>
