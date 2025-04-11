@@ -1,9 +1,20 @@
+// src/app/page.tsx
 'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import TrustSection from '../components/TrustSection';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Bible Mentor AI – Your Personal AI Guide for Bible Study',
+  description:
+    'Grow in faith with Bible Mentor AI – personalized devotionals, AI-guided Bible study, and spiritual insight rooted in Scripture.',
+  alternates: {
+    canonical: 'https://biblementorai.org/',
+  },
+};
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
