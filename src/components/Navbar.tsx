@@ -28,6 +28,7 @@ export default function Navbar() {
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
             <Link href="/daily-word">Daily Word</Link>
+            <Link href="/tracks">Tracks</Link>
             <Link href="/memory">Your Faith Journey</Link>
             <Link href="/get-involved">Get Involved</Link>
             <Link href="/beliefs">Beliefs</Link>
