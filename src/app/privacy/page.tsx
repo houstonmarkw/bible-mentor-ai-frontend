@@ -1,4 +1,4 @@
-import PrivacyCommitment from '@/components/PrivacyCommitment';
+import PrivacyCommitment from '../../components/PrivacyCommitment';
 
 export default function PrivacyPolicyPage() {
   return (

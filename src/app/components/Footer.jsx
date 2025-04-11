@@ -14,12 +14,13 @@ const Footer = () => {
         <a href="#faq" className="hover:text-black">FAQ</a>
         <Link href="/get-involved" className="hover:text-black">Get Involved</Link>
         <Link href="/trust" className="hover:text-black">Trust & Philosophy</Link>
+        <Link href="/memory" className="hover:text-black">Your Faith Journey</Link>
       </nav>
 
-      <p className="text-xs text-gray-400">© 2025 Bible Mentor AI, LLC • All rights reserved</p>
+      <p className="text-xs text-gray-400">© 2025 Bible Mentor AI • All rights reserved</p>
       <p className="text-xs text-gray-400">
         <Link href="/privacy" className="hover:underline">Privacy Policy</Link> ·{' '}
-        <Link href="/terms-of-use" className="hover:underline">Terms of Use</Link>
+        <Link href="/terms" className="hover:underline">Terms of Use</Link>
       </p>
     </footer>
   );

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import TrustSection from '@/components/TrustSection';
+import TrustSection from '../components/TrustSection';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -61,6 +61,9 @@ export default function Home() {
             <p className="text-gray-700 leading-relaxed">
               Bible Mentor AI was built for people who want more than just a daily verse. Whether you're just starting your journey with Christ or growing deeper in faith, our tools meet you where you are — every day.
               We pair spiritual mentorship with modern technology to make faith feel real, actionable, and deeply personal.
+            </p>
+            <p className="text-blue-800 italic mt-4">
+              Bible Mentor AI remembers so you don’t forget what God has done.
             </p>
           </div>
         </div>
