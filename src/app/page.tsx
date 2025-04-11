@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import TrustSection from '../../components/TrustSection';
+import TrustSection from '../components/TrustSection'; // ✅ fixed path
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
