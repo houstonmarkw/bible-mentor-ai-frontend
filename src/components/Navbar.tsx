@@ -31,6 +31,7 @@ export default function Navbar() {
             <Link href="/memory">Your Faith Journey</Link>
             <Link href="/get-involved">Get Involved</Link>
             <Link href="/beliefs">Beliefs</Link>
+            <Link href="/trustpage" className="hover:text-black">Trust &amp; Philosophy</Link>
             <Link href="/faq">FAQ</Link>
           </div>
         </div>
