@@ -21,8 +21,7 @@ const staggerContainer = {
 export default function HomeContent() {
   return (
     <div>
-      {/* All your section code stays the same */}
-      {/* No changes needed inside */}
+      {/* all your homepage JSX stays exactly the same here */}
     </div>
   );
 }

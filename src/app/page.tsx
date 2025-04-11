@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-
-const HomeContent = dynamic(() => import('./HomeContent'), { ssr: false });
+import HomeContent from './home-content'; // not dynamic, no SSR trickery
 
 export const metadata: Metadata = {
   title: 'Bible Mentor AI – Your Personal AI Guide for Bible Study',
