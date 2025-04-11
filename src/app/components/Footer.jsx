@@ -1,5 +1,4 @@
-
-import React from "react";
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -13,12 +12,14 @@ const Footer = () => {
         <a href="#tracks" className="hover:text-black">Tracks</a>
         <a href="#dailyword" className="hover:text-black">The Daily Word</a>
         <a href="#faq" className="hover:text-black">FAQ</a>
-        <a href="#get-involved" className="hover:text-black">Get Involved</a>
+        <Link href="/get-involved" className="hover:text-black">Get Involved</Link>
+        <Link href="/trust" className="hover:text-black">Trust & Philosophy</Link>
       </nav>
 
       <p className="text-xs text-gray-400">© 2025 Bible Mentor AI, LLC • All rights reserved</p>
       <p className="text-xs text-gray-400">
-        <a href="/privacy" className="hover:underline">Privacy Policy</a> · <a href="/terms" className="hover:underline">Terms of Use</a>
+        <Link href="/privacy" className="hover:underline">Privacy Policy</Link> ·{' '}
+        <Link href="/terms-of-use" className="hover:underline">Terms of Use</Link>
       </p>
     </footer>
   );

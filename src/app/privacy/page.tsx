@@ -1,3 +1,5 @@
+import PrivacyCommitment from '@/components/PrivacyCommitment';
+
 export default function PrivacyPolicyPage() {
   return (
     <section className="bg-white min-h-screen px-6 py-16">
@@ -5,13 +7,17 @@ export default function PrivacyPolicyPage() {
         <h1 className="text-4xl font-bold text-blue-800 mb-8 text-center">Privacy Policy</h1>
         <p className="text-sm text-gray-500 mb-10 text-center">Effective Date: April 10, 2025</p>
 
+        {/* ✅ Inserted Trust Component */}
+        <PrivacyCommitment />
+
+        {/* ✅ Begin full policy content */}
         <p className="text-gray-700 mb-6">
-          Bible Mentor AI LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) is committed to protecting your privacy and honoring the sacred nature of your faith journey. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Bible Mentor AI app (&ldquo;the App&rdquo;).
+          Bible Mentor AI LLC ("we," "us," "our") is committed to protecting your privacy and honoring the sacred nature of your faith journey. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Bible Mentor AI app ("the App").
         </p>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">1. Purpose of Data Collection</h2>
         <p className="text-gray-700 mb-6">
-          We collect personal data solely to support your spiritual growth, track your devotional progress, and deliver a personalized faith-based experience. Your reflections, verse highlights, prayer notes, and spiritual milestones are stored securely to help guide your walk with Christ&mdash;not for marketing or behavioral profiling.
+          We collect personal data solely to support your spiritual growth, track your devotional progress, and deliver a personalized faith-based experience. Your reflections, verse highlights, prayer notes, and spiritual milestones are stored securely to help guide your walk with Christ—not for marketing or behavioral profiling.
         </p>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">2. What Data We Collect</h2>
@@ -32,7 +38,7 @@ export default function PrivacyPolicyPage() {
           <li>Deliver personalized devotional content</li>
           <li>Remember and track your spiritual progress</li>
           <li>Enable reminders and content suggestions</li>
-          <li>Improve the app&apos;s spiritual tools and experience</li>
+          <li>Improve the app's spiritual tools and experience</li>
         </ul>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">4. AI Interactions</h2>
@@ -64,10 +70,10 @@ export default function PrivacyPolicyPage() {
           <li>Manage reminder and notification preferences</li>
         </ul>
         <p className="text-gray-700 mt-2">
-          These tools are available through the &ldquo;My Journey&rdquo; section of the App. You&apos;re always in control.
+          These tools are available through the “My Journey” section of the App. You're always in control.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">8. Children&rsquo;s Privacy</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">8. Children's Privacy</h2>
         <p className="text-gray-700">
           Bible Mentor AI is not intended for children under 13. All accounts must be created by adults. If your family uses the App together, we recommend doing so with parental guidance. We comply with COPPA and related protections.
         </p>
@@ -94,7 +100,7 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <p className="text-center text-sm text-gray-500 mt-12">
-          In faith, privacy is a promise. Your journey is personal. We&rsquo;re here to support it&mdash;not surveil it.
+          In faith, privacy is a promise. Your journey is personal. We’re here to support it—not surveil it.
         </p>
       </div>
     </section>
