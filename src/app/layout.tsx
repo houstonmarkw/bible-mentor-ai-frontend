@@ -1,5 +1,7 @@
 import './globals.css';
-import Navbar from '../components/Navbar'; // ✅ updated import path
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer'; // ✅ Add this
+
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -15,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Navbar />
         <main>{children}</main>
+        <Footer /> {/* ✅ Add this */}
       </body>
     </html>
   );
