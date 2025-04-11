@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
 
         {/* ✅ Begin full policy content */}
         <p className="text-gray-700 mb-6">
-          Bible Mentor AI LLC ("we," "us," "our") is committed to protecting your privacy and honoring the sacred nature of your faith journey. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Bible Mentor AI app ("the App").
+          Bible Mentor AI LLC (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) is committed to protecting your privacy and honoring the sacred nature of your faith journey. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Bible Mentor AI app (&quot;the App&quot;).
         </p>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">1. Purpose of Data Collection</h2>
@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
           <li>Deliver personalized devotional content</li>
           <li>Remember and track your spiritual progress</li>
           <li>Enable reminders and content suggestions</li>
-          <li>Improve the app's spiritual tools and experience</li>
+          <li>Improve the app&apos;s spiritual tools and experience</li>
         </ul>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">4. AI Interactions</h2>
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
           Bible Mentor AI uses artificial intelligence to guide study, offer mentorship prompts, and generate devotionals. Interactions are processed by OpenAI, but long-term user data is not stored by OpenAI. All reflections and memory are stored only in our secure Firebase Firestore database, linked to your user ID.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">5. Data Storage & Security</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">5. Data Storage &amp; Security</h2>
         <p className="text-gray-700 mb-6">
           Your data is stored using Google Firebase and Firestore, both of which meet industry-standard encryption protocols. Access is protected by Firebase Authentication. Only you (and optionally our support team, with permission) can access your data.
         </p>
@@ -72,15 +72,15 @@ export default function PrivacyPolicyPage() {
           <li>Manage reminder and notification preferences</li>
         </ul>
         <p className="text-gray-700 mt-2">
-          These tools are available through the “My Journey” section of the App. You're always in control.
+          These tools are available through the &quot;My Journey&quot; section of the App. You&apos;re always in control.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">8. Children's Privacy</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">8. Children&apos;s Privacy</h2>
         <p className="text-gray-700">
           Bible Mentor AI is not intended for children under 13. All accounts must be created by adults. If your family uses the App together, we recommend doing so with parental guidance. We comply with COPPA and related protections.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">9. Your Rights (GDPR & California Residents)</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-2">9. Your Rights (GDPR &amp; California Residents)</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
           <li>Request access, correction, or deletion of your data</li>
           <li>Withdraw consent at any time</li>
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <p className="text-center text-sm text-gray-500 mt-12">
-          In faith, privacy is a promise. Your journey is personal. We’re here to support it—not surveil it.
+          In faith, privacy is a promise. Your journey is personal. We&apos;re here to support it—not surveil it.
         </p>
       </div>
     </section>
