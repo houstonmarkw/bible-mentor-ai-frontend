@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../lib/firebase';
+import { db } from '../../../lib/firebase';
 
 type BlogPost = {
   title: string;
