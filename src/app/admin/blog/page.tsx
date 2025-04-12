@@ -2,9 +2,20 @@
 
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+
+type BlogPost = {
+  title: string;
+  slug: string;
+  summary: string;
+  date: string;
+  author: string;
+  category: string;
+  content: string;
+};
 
 export default function AdminBlogPage() {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<BlogPost>({
     title: '',
     slug: '',
     summary: '',
@@ -14,6 +25,7 @@ export default function AdminBlogPage() {
     content: '',
   });
 
+  const [savedPosts, setSavedPosts] = useState<BlogPost[]>([]);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,8 +41,20 @@ export default function AdminBlogPage() {
       return;
     }
 
-    console.log('📝 New blog post data:', form);
+    const newPost = { ...form };
+    setSavedPosts((prev) => [...prev, newPost]);
+    console.log('📝 New blog post data:', newPost);
+
     setSubmitted(true);
+    setForm({
+      title: '',
+      slug: '',
+      summary: '',
+      date: new Date().toISOString().slice(0, 10),
+      author: 'Mark Houston',
+      category: '',
+      content: '',
+    });
   };
 
   return (
@@ -45,7 +69,7 @@ export default function AdminBlogPage() {
 
           {submitted && (
             <div className="bg-green-100 text-green-700 px-4 py-2 rounded mb-6 text-sm text-center">
-              Post submitted! Check the console — Firestore integration coming next.
+              Post submitted! Preview added below.
             </div>
           )}
 
@@ -124,6 +148,22 @@ export default function AdminBlogPage() {
             </button>
           </form>
         </div>
+
+        {/* 📝 Blog Post Preview List */}
+        {savedPosts.length > 0 && (
+          <div className="max-w-3xl mx-auto mt-16 space-y-10">
+            <h2 className="text-2xl font-bold text-blue-800 mb-4 text-center">Preview Saved Posts</h2>
+            {savedPosts.map((post, idx) => (
+              <div key={idx} className="bg-gray-50 p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-semibold text-blue-700">{post.title}</h3>
+                <p className="text-sm text-gray-500 mt-1">
+                  {post.date} • {post.category} • by {post.author}
+                </p>
+                <p className="text-gray-700 mt-2">{post.summary}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
     </>
   );
