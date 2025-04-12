@@ -1,5 +1,7 @@
 'use client';
 
+import Head from 'next/head';
+
 export default function FAQPage() {
   const qa = [
     {
@@ -49,20 +51,31 @@ export default function FAQPage() {
   ];
 
   return (
-    <section className="bg-white min-h-screen px-6 py-16">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-blue-800 mb-10 text-center">Spiritual FAQ</h1>
-        {qa.map((item, idx) => (
-          <div key={idx} className="mb-8">
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Q: {item.q}</h3>
-            <p className="text-gray-700">{item.a}</p>
-          </div>
-        ))}
-        <p className="text-center text-sm text-gray-500 mt-12">
-          Learn. Carry. Follow. <br />
-          <span className="font-medium text-blue-700">Bible Mentor AI:</span> Guiding you through the Word, in the Word, and with the Word.
-        </p>
-      </div>
-    </section>
+    <>
+      <Head>
+        <title>FAQ – Bible Mentor AI</title>
+        <meta
+          name="description"
+          content="Frequently asked questions about Bible Mentor AI – how it works, how your data is used, and how to grow spiritually through your personalized journey."
+        />
+        <link rel="canonical" href="https://biblementorai.org/faq" />
+      </Head>
+
+      <section className="bg-white min-h-screen px-6 py-16">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-blue-800 mb-10 text-center">Spiritual FAQ</h1>
+          {qa.map((item, idx) => (
+            <div key={idx} className="mb-8">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Q: {item.q}</h3>
+              <p className="text-gray-700">{item.a}</p>
+            </div>
+          ))}
+          <p className="text-center text-sm text-gray-500 mt-12">
+            Learn. Carry. Follow. <br />
+            <span className="font-medium text-blue-700">Bible Mentor AI:</span> Guiding you through the Word, in the Word, and with the Word.
+          </p>
+        </div>
+      </section>
+    </>
   );
 }
