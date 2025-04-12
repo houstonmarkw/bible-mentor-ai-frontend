@@ -4,15 +4,17 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../lib/firebase';
 
 type BlogPost = {
-  slug: string;
   title: string;
+  slug: string;
   summary: string;
   date: string;
   author: string;
   category: string;
-  content: string; // Markdown format
+  content: string; // Markdown
 };
 
 export default function BlogPostPage() {
@@ -23,17 +25,17 @@ export default function BlogPostPage() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await fetch('/data/blog-posts.json');
-        if (!res.ok) throw new Error('Failed to load blog data');
-        const posts: BlogPost[] = await res.json();
-        const found = posts.find((p) => p.slug === slug);
-        if (!found) throw new Error('Post not found');
-        setPost(found);
+        const querySnapshot = await getDocs(collection(db, 'blogPosts'));
+        const allPosts = querySnapshot.docs.map((doc) => doc.data() as BlogPost);
+        const match = allPosts.find((p) => p.slug === slug);
+        if (!match) throw new Error('Not found');
+        setPost(match);
       } catch (e) {
+        console.error('❌ Failed to load blog post:', e);
         setError(true);
-        console.error('Blog fetch error:', e);
       }
     };
+
     fetchPost();
   }, [slug]);
 
