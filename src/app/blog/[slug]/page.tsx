@@ -12,7 +12,7 @@ type BlogPost = {
   date: string;
   author: string;
   category: string;
-  content: string; // now in Markdown format
+  content: string; // Markdown format
 };
 
 export default function BlogPostPage() {
@@ -68,9 +68,9 @@ export default function BlogPostPage() {
             {post.date} • {post.category} • by {post.author}
           </p>
 
-          <ReactMarkdown className="prose prose-blue max-w-none text-gray-800 leading-relaxed">
-            {post.content}
-          </ReactMarkdown>
+          <div className="prose prose-blue max-w-none text-gray-800 leading-relaxed">
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+          </div>
         </div>
       </section>
     </>
