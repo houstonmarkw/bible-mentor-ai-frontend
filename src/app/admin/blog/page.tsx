@@ -24,7 +24,6 @@ export default function AdminBlogPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
     if (!form.title || !form.slug || !form.content) {
       alert('Title, Slug, and Content are required.');
       return;
@@ -57,7 +56,7 @@ export default function AdminBlogPage() {
                 name="title"
                 value={form.title}
                 onChange={handleChange}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-blue-800"
                 required
               />
             </div>
@@ -68,7 +67,7 @@ export default function AdminBlogPage() {
                 name="slug"
                 value={form.slug}
                 onChange={handleChange}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-blue-800"
                 required
               />
             </div>
@@ -79,7 +78,7 @@ export default function AdminBlogPage() {
                 name="summary"
                 value={form.summary}
                 onChange={handleChange}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-blue-800"
               />
             </div>
 
@@ -91,7 +90,7 @@ export default function AdminBlogPage() {
                   name="date"
                   value={form.date}
                   onChange={handleChange}
-                  className="w-full border rounded px-3 py-2"
+                  className="w-full border rounded px-3 py-2 text-blue-800"
                 />
               </div>
               <div className="w-1/2">
@@ -100,7 +99,7 @@ export default function AdminBlogPage() {
                   name="category"
                   value={form.category}
                   onChange={handleChange}
-                  className="w-full border rounded px-3 py-2"
+                  className="w-full border rounded px-3 py-2 text-blue-800"
                 />
               </div>
             </div>
@@ -111,7 +110,7 @@ export default function AdminBlogPage() {
                 name="content"
                 value={form.content}
                 onChange={handleChange}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-blue-800"
                 rows={10}
                 required
               />
