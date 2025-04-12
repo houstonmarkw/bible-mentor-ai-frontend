@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { db } from '../../lib/firebase';
 
 type BlogPost = {
   title: string;
