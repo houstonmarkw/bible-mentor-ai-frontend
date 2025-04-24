@@ -1,21 +1,8 @@
 import { notFound } from 'next/navigation';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import type { Metadata } from 'next';
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  return {
-    title: params.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-  };
-}
-
-export default async function Page({ params }: PageProps): Promise<JSX.Element> {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const ref = doc(db, 'blogPosts', slug);
   const snapshot = await getDoc(ref);
