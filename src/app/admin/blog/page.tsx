@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, signOut, getAuth } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import LoginForm from '@/components/LoginForm';
 import {
@@ -98,6 +98,17 @@ export default function AdminBlogPage() {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      const auth = getAuth();
+      await signOut(auth);
+      window.location.href = '/admin';
+    } catch (error) {
+      console.error('Logout failed:', error);
+      alert('Error signing out.');
+    }
+  };
+
   return (
     <>
       <Head>
@@ -106,9 +117,17 @@ export default function AdminBlogPage() {
 
       <section className="bg-white min-h-screen px-6 py-16">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-3xl font-bold text-blue-800 mb-8 text-center">
-            {isEditing ? 'Edit Blog Post' : 'New Blog Post'}
-          </h1>
+          <div className="flex justify-between items-center mb-8">
+            <h1 className="text-3xl font-bold text-blue-800">
+              {isEditing ? 'Edit Blog Post' : 'New Blog Post'}
+            </h1>
+            <button
+              onClick={handleLogout}
+              className="text-sm bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+            >
+              Log Out
+            </button>
+          </div>
 
           {submitted && (
             <div className="bg-green-100 text-green-700 px-4 py-2 rounded mb-6 text-sm text-center">
@@ -188,7 +207,6 @@ export default function AdminBlogPage() {
           </form>
         </div>
 
-        {/* Blog List */}
         {savedPosts.length > 0 && (
           <div className="max-w-3xl mx-auto mt-16 space-y-10">
             <h2 className="text-2xl font-bold text-blue-800 mb-4 text-center">Saved Posts</h2>
