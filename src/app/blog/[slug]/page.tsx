@@ -1,23 +1,31 @@
-import { notFound } from 'next/navigation';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { notFound } from 'next/navigation'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '@/lib/firebase'
+import { Metadata } from 'next'
 
-interface PageProps {
+type Props = {
   params: {
-    slug: string;
-  };
+    slug: string
+  }
 }
 
-export default async function BlogPostPage({ params }: PageProps): Promise<JSX.Element> {
-  const { slug } = params;
-  const docRef = doc(db, 'blogPosts', slug);
-  const snapshot = await getDoc(docRef);
+// Optional: dynamic metadata for SEO
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return {
+    title: params.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+  }
+}
+
+export default async function BlogPostPage({ params }: Props): Promise<JSX.Element> {
+  const { slug } = params
+  const ref = doc(db, 'blogPosts', slug)
+  const snapshot = await getDoc(ref)
 
   if (!snapshot.exists()) {
-    notFound();
+    notFound()
   }
 
-  const post = snapshot.data();
+  const post = snapshot.data()
 
   return (
     <main className="min-h-screen bg-white text-slate-800 px-6 py-16">
@@ -33,5 +41,5 @@ export default async function BlogPostPage({ params }: PageProps): Promise<JSX.E
         />
       </article>
     </main>
-  );
+  )
 }
