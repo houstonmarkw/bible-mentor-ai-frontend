@@ -1,31 +1,30 @@
-import { notFound } from 'next/navigation'
-import { doc, getDoc } from 'firebase/firestore'
-import { db } from '@/lib/firebase'
-import { Metadata } from 'next'
+import { notFound } from 'next/navigation';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+import type { Metadata } from 'next';
 
-type Props = {
+type PageProps = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
-// Optional: dynamic metadata for SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   return {
     title: params.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-  }
+  };
 }
 
-export default async function BlogPostPage({ params }: Props): Promise<JSX.Element> {
-  const { slug } = params
-  const ref = doc(db, 'blogPosts', slug)
-  const snapshot = await getDoc(ref)
+export default async function Page({ params }: PageProps): Promise<JSX.Element> {
+  const { slug } = params;
+  const ref = doc(db, 'blogPosts', slug);
+  const snapshot = await getDoc(ref);
 
   if (!snapshot.exists()) {
-    notFound()
+    notFound();
   }
 
-  const post = snapshot.data()
+  const post = snapshot.data();
 
   return (
     <main className="min-h-screen bg-white text-slate-800 px-6 py-16">
@@ -41,5 +40,5 @@ export default async function BlogPostPage({ params }: Props): Promise<JSX.Eleme
         />
       </article>
     </main>
-  )
+  );
 }
