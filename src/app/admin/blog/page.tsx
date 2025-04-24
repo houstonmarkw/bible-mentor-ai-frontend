@@ -9,6 +9,7 @@ import {
   updateBlogPost,
   deleteBlogPost,
 } from '@/lib/blog';
+import type { BlogPost } from '@/types/blog'
 
 // Dynamically import Tiptap to avoid SSR issues
 const RichTextEditor = dynamic(() => import('@/components/RichTextEditor'), { ssr: false });
