@@ -1,6 +1,6 @@
 // src/app/api/submit-to-indexnow/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { submitToIndexNow } from '../../../utils/indexNow';
+import { submitToIndexNow } from '../../../../utils/indexNow';
 
 export async function POST(req: NextRequest) {
   const { url } = await req.json();
