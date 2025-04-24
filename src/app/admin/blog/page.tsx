@@ -14,17 +14,6 @@ import type { BlogPost } from '@/types/blog'
 // Dynamically import Tiptap to avoid SSR issues
 const RichTextEditor = dynamic(() => import('@/components/RichTextEditor'), { ssr: false });
 
-type BlogPost = {
-  id?: string;
-  title: string;
-  slug: string;
-  summary: string;
-  date: string;
-  author: string;
-  category: string;
-  content: string;
-};
-
 export default function AdminBlogPage() {
   const [form, setForm] = useState<BlogPost>({
     title: '',
