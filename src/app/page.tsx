@@ -48,12 +48,20 @@ export default function Home() {
           <p className="text-gray-600 max-w-xl mx-auto">
             Personalized devotionals, daily Bible study, and spiritual mentorship — delivered through intelligent guidance rooted in Scripture.
           </p>
-          <a
-            href="mailto:support@biblementorai.org"
-            className="inline-block mt-8 px-8 py-4 bg-blue-700 text-white font-semibold rounded-full shadow-lg hover:bg-blue-800 transition"
-          >
-            Contact Us
-          </a>
+          <div className="flex justify-center gap-4 flex-wrap mt-8">
+            <a
+              href="mailto:support@biblementorai.org"
+              className="px-8 py-4 bg-blue-700 text-white font-semibold rounded-full shadow-lg hover:bg-blue-800 transition"
+            >
+              Contact Us
+            </a>
+            <Link
+              href="/bible/web"
+              className="px-8 py-4 bg-blue-100 text-blue-800 font-semibold rounded-full hover:bg-blue-200 transition"
+            >
+              Explore the Bible
+            </Link>
+          </div>
         </motion.section>
 
         {/* About Section */}

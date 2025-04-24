@@ -8,7 +8,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
@@ -33,6 +32,7 @@ export default function Navbar() {
         <div className="bg-white border-t px-6 pb-6 text-gray-700 font-medium">
           <div className="flex flex-col space-y-4 pt-4 text-center">
             <Link href="/">Home</Link>
+            <Link href="/bible/web" className="text-blue-700 font-semibold hover:text-blue-900">Bible</Link>
             <Link href="/about">About Us</Link>
             <Link href="/daily-word">Daily Word</Link>
             <Link href="/blog" className="hover:text-blue-600">Blog</Link>
