@@ -30,7 +30,7 @@ const BookGrid = ({ books, title }: { books: string[]; title: string }) => (
       {books.map((book) => (
         <Link
           key={book}
-          href={`/bible/${book.toLowerCase()}`}
+          href={`/bible/web/${book.toLowerCase()}`} // ✅ FIXED: Added /web/
           className="block bg-blue-100 hover:bg-blue-200 text-center px-4 py-2 rounded text-sm font-medium"
         >
           {book}
