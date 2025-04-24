@@ -3,8 +3,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const ref = doc(db, 'blogPosts', slug);
+  const ref = doc(db, 'blogPosts', params.slug);
   const snapshot = await getDoc(ref);
 
   if (!snapshot.exists()) {
