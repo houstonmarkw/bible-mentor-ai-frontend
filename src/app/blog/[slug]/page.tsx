@@ -2,13 +2,13 @@ import { notFound } from 'next/navigation';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
-type Props = {
+interface PageProps {
   params: {
     slug: string;
   };
-};
+}
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params }: PageProps): Promise<JSX.Element> {
   const { slug } = params;
   const docRef = doc(db, 'blogPosts', slug);
   const snapshot = await getDoc(docRef);
