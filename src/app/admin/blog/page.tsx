@@ -102,7 +102,7 @@ export default function AdminBlogPage() {
     try {
       const auth = getAuth();
       await signOut(auth);
-      window.location.href = '/admin';
+      window.location.href = '/admin/blog';
     } catch (error) {
       console.error('Logout failed:', error);
       alert('Error signing out.');
