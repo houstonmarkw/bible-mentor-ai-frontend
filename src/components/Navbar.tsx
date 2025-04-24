@@ -21,7 +21,7 @@ export default function Navbar() {
         </Link>
 
         <button
-          className="text-2xl focus:outline-none"
+          className="text-blue-700 dark:text-blue-700 text-2xl focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation menu"
         >
