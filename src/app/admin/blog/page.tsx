@@ -3,15 +3,17 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '@/lib/firebase';
+import LoginForm from '@/components/LoginForm';
 import {
   saveBlogPost,
   fetchAllBlogPosts,
   updateBlogPost,
   deleteBlogPost,
 } from '@/lib/blog';
-import type { BlogPost } from '@/types/blog'
+import type { BlogPost } from '@/types/blog';
 
-// Dynamically import Tiptap to avoid SSR issues
 const RichTextEditor = dynamic(() => import('@/components/RichTextEditor'), { ssr: false });
 
 export default function AdminBlogPage() {
@@ -28,15 +30,33 @@ export default function AdminBlogPage() {
   const [formId, setFormId] = useState<string | null>(null);
   const [savedPosts, setSavedPosts] = useState<BlogPost[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const isEditing = !!formId;
 
   useEffect(() => {
-    const loadPosts = async () => {
-      const posts = await fetchAllBlogPosts();
-      setSavedPosts(posts as BlogPost[]);
-    };
-    loadPosts();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUserEmail(user?.email || null);
+      setAuthLoading(false);
+    });
+    return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (userEmail === 'markhouston@biblementorai.org') {
+      fetchAllBlogPosts().then((posts) => {
+        setSavedPosts(posts as BlogPost[]);
+      });
+    }
+  }, [userEmail]);
+
+  if (authLoading) {
+    return <p className="text-center mt-24">Checking authentication...</p>;
+  }
+
+  if (userEmail !== 'markhouston@biblementorai.org') {
+    return <LoginForm />;
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -168,7 +188,7 @@ export default function AdminBlogPage() {
           </form>
         </div>
 
-        {/* 📝 Blog Post List */}
+        {/* Blog List */}
         {savedPosts.length > 0 && (
           <div className="max-w-3xl mx-auto mt-16 space-y-10">
             <h2 className="text-2xl font-bold text-blue-800 mb-4 text-center">Saved Posts</h2>
@@ -208,8 +228,7 @@ export default function AdminBlogPage() {
                       const confirmed = confirm(`Delete post "${post.title}"?`);
                       if (!confirmed) return;
                       await deleteBlogPost(post.id!);
-                      const posts = await fetchAllBlogPosts();
-                      setSavedPosts(posts as BlogPost[]);
+                      setSavedPosts((prev) => prev.filter((p) => p.id !== post.id));
                     }}
                     className="text-red-600 hover:underline text-sm"
                   >
