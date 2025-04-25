@@ -34,6 +34,11 @@ export default function AdminBlogPage() {
   const [authLoading, setAuthLoading] = useState(true);
   const isEditing = !!formId;
 
+  const adminEmails = [
+    'markhouston@biblementorai.org',
+    'ryandanley@biblementorai.org',
+  ];
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUserEmail(user?.email || null);
@@ -43,7 +48,7 @@ export default function AdminBlogPage() {
   }, []);
 
   useEffect(() => {
-    if (userEmail === 'markhouston@biblementorai.org') {
+    if (userEmail && adminEmails.includes(userEmail)) {
       fetchAllBlogPosts().then((posts) => {
         setSavedPosts(posts as BlogPost[]);
       });
@@ -54,7 +59,7 @@ export default function AdminBlogPage() {
     return <p className="text-center mt-24">Checking authentication...</p>;
   }
 
-  if (userEmail !== 'markhouston@biblementorai.org') {
+  if (!userEmail || !adminEmails.includes(userEmail)) {
     return <LoginForm />;
   }
 
