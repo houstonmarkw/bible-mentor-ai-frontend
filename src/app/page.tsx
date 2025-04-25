@@ -101,7 +101,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8 text-left">
               {[{
                 title: 'Guided, Not Replaced',
-                desc: 'We support your walk with Christ — not automate it. We're not here to replace pastors or prayer, but to point you to the Word daily.'
+                desc: 'We support your walk with Christ — not automate it. We are not here to replace pastors or prayer, but to point you to the Word daily.'
               }, {
                 title: 'Daily, Not Sporadic',
                 desc: 'Devotion is a rhythm. Our tools guide you day by day, reinforcing spiritual growth through consistency and grace.'
