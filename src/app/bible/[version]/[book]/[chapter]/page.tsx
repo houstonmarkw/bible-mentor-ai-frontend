@@ -7,7 +7,6 @@ import VerseModal from '../../../../../components/VerseModal';
 
 export default function ChapterPage() {
   const params = useParams();
-  console.log('Route params:', params);
 
   const version = params?.version as string;
   const book = params?.book as string;
@@ -20,27 +19,24 @@ export default function ChapterPage() {
   } | null>(null);
 
   useEffect(() => {
-    if (!book || !chapter) return;
+    if (!book || !chapter || !version) return;
 
     const fetchChapter = async () => {
       try {
-        const response = await fetch(`/bible-api/${version}/${book}/${chapter}.json`);
-        const data = await response.json();
-        console.log('📘 Raw chapter data:', data);
+        const res = await fetch(`/bible-api/${version}/${book}/${chapter}.json`);
+        const data = await res.json();
 
         if (data && data.verses && typeof data.verses === 'object') {
-          const parsedVerses = Object.entries(data.verses).map(([verse, text]) => ({
+          const parsed = Object.entries(data.verses).map(([verse, text]) => ({
             verse,
             text: text as string,
           }));
-          setVerses(parsedVerses);
+          setVerses(parsed);
         } else {
-          console.error('❌ Unexpected data format:', data);
-          setVerses([]);
+          console.error('Unexpected format:', data);
         }
       } catch (err) {
-        console.error('💥 Error fetching chapter:', err);
-        setVerses([]);
+        console.error('Failed to fetch chapter:', err);
       }
     };
 
@@ -49,7 +45,7 @@ export default function ChapterPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-2 capitalize">
+      <h1 className="text-2xl font-bold mb-4 capitalize">
         {book} {chapter}
       </h1>
 
