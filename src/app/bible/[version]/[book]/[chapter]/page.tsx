@@ -1,8 +1,9 @@
-// /src/app/bible/[version]/[book]/[chapter]/page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from '../../../../../lib/firebase';
 import VerseModal from '../../../../../components/VerseModal';
 
 export default function ChapterPage() {
@@ -23,20 +24,27 @@ export default function ChapterPage() {
 
     const fetchChapter = async () => {
       try {
-        const res = await fetch(`/bible-api/${version}/${book}/${chapter}.json`);
-        const data = await res.json();
+        const ref = doc(db, 'bible', version.toLowerCase(), book.toLowerCase(), chapter);
+        const snap = await getDoc(ref);
 
-        if (data && data.verses && typeof data.verses === 'object') {
-          const parsed = Object.entries(data.verses).map(([verse, text]) => ({
-            verse,
-            text: text as string,
-          }));
-          setVerses(parsed);
+        if (snap.exists()) {
+          const data = snap.data();
+          const versesObject = data.verses;
+
+          if (versesObject && typeof versesObject === 'object') {
+            const parsed = Object.entries(versesObject).map(([verse, text]) => ({
+              verse,
+              text: text as string,
+            }));
+            setVerses(parsed);
+          } else {
+            console.error('❌ verses object is missing or malformed');
+          }
         } else {
-          console.error('Unexpected format:', data);
+          console.warn(`❌ Chapter not found in Firestore: ${book} ${chapter}`);
         }
       } catch (err) {
-        console.error('Failed to fetch chapter:', err);
+        console.error('💥 Firestore fetch error:', err);
       }
     };
 
