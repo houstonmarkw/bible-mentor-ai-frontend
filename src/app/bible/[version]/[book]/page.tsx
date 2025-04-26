@@ -1,4 +1,3 @@
-// /app/bible/[book]/page.tsx
 'use client';
 
 import { useParams } from 'next/navigation';
@@ -24,7 +23,8 @@ const chapterCounts: Record<string, number> = {
 
 export default function BookChaptersPage() {
   const params = useParams();
-  const book = params?.book?.toString().toLowerCase();
+  const rawBook = params?.book?.toString() || '';
+  const book = decodeURIComponent(rawBook).toLowerCase();
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -35,21 +35,26 @@ export default function BookChaptersPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 capitalize">{book}</h1>
+      <h1 className="text-2xl font-bold mb-4 capitalize text-gray-800 dark:text-white">
+        {decodeURIComponent(rawBook)}
+      </h1>
+
       {count > 0 ? (
         <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-2">
           {Array.from({ length: count }).map((_, i) => (
             <Link
               key={i}
-              href={`/bible/web/${book}/${i + 1}`}
-              className="bg-blue-100 hover:bg-blue-200 text-center py-2 rounded font-medium text-sm"
+              href={`/bible/web/${encodeURIComponent(book)}/${i + 1}`}
+              className="bg-blue-100 text-black hover:bg-blue-200 dark:bg-blue-800 dark:hover:bg-blue-700 dark:text-white text-center py-2 rounded font-medium text-sm transition"
             >
               {i + 1}
             </Link>
           ))}
         </div>
       ) : (
-        <p>No chapter info available for this book.</p>
+        <p className="text-gray-700 dark:text-gray-300">
+          No chapter info available for this book.
+        </p>
       )}
     </div>
   );

@@ -1,4 +1,3 @@
-// /app/bible/page.tsx
 'use client';
 
 import Link from 'next/link';
@@ -25,13 +24,13 @@ const booksNT = [
 
 const BookGrid = ({ books, title }: { books: string[]; title: string }) => (
   <>
-    <h2 className="text-xl font-bold mb-2">{title}</h2>
+    <h2 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">{title}</h2>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mb-6">
       {books.map((book) => (
         <Link
           key={book}
-          href={`/bible/web/${book.toLowerCase()}`} // ✅ FIXED: Added /web/
-          className="block bg-blue-100 hover:bg-blue-200 text-center px-4 py-2 rounded text-sm font-medium"
+          href={`/bible/web/${book.toLowerCase()}`}
+          className="block bg-blue-100 text-black hover:bg-blue-200 dark:bg-blue-800 dark:text-white dark:hover:bg-blue-700 text-center px-4 py-2 rounded text-sm font-medium transition"
         >
           {book}
         </Link>
@@ -43,7 +42,7 @@ const BookGrid = ({ books, title }: { books: string[]; title: string }) => (
 export default function BibleNavPage() {
   return (
     <div className="max-w-3xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Select a Book</h1>
+      <h1 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Select a Book</h1>
       <BookGrid books={booksOT} title="Old Testament" />
       <BookGrid books={booksNT} title="New Testament" />
     </div>
