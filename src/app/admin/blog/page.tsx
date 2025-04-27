@@ -6,6 +6,8 @@ import dynamic from 'next/dynamic';
 import { onAuthStateChanged, signOut, getAuth } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import LoginForm from '@/components/LoginForm';
+import DictationGuide from '@/components/DictationGuide';
+import { useSpeechToText } from '@/hooks/useSpeechToText';
 import {
   saveBlogPost,
   fetchAllBlogPosts,
@@ -33,6 +35,13 @@ export default function AdminBlogPage() {
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const isEditing = !!formId;
+
+  const { listening, setListening, rawTranscript, error: speechError } = useSpeechToText((text) => {
+    setForm((prev) => ({
+      ...prev,
+      content: text,
+    }));
+  });
 
   const adminEmails = [
     'markhouston@biblementorai.org',
@@ -67,11 +76,10 @@ export default function AdminBlogPage() {
     const { name, value } = e.target;
 
     if (name === 'title') {
-      // Auto-generate slug from title
       const generatedSlug = value
         .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-') // replace non-alphanumeric with hyphens
-        .replace(/(^-|-$)/g, '');    // remove leading/trailing hyphens
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
       setForm((prev) => ({
         ...prev,
         title: value,
@@ -155,6 +163,31 @@ export default function AdminBlogPage() {
             <div className="bg-green-100 text-green-700 px-4 py-2 rounded mb-6 text-sm text-center">
               Post {isEditing ? 'updated' : 'submitted'}! Preview updated below.
             </div>
+          )}
+
+          {/* Speech-to-Text Controls */}
+          <div className="flex items-center gap-4 mb-4">
+            <button
+              type="button"
+              onClick={() => setListening(!listening)}
+              className={`text-sm ${
+                listening ? 'bg-red-600' : 'bg-blue-600'
+              } text-white px-4 py-2 rounded hover:bg-blue-700 transition`}
+            >
+              {listening ? 'Stop Dictation' : 'Start Dictation'}
+            </button>
+
+            {listening && (
+              <span className="text-red-600 text-sm animate-pulse">
+                Listening...
+              </span>
+            )}
+
+            <DictationGuide />
+          </div>
+
+          {speechError && (
+            <p className="text-red-600 text-sm mb-4">{speechError}</p>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
