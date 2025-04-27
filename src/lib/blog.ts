@@ -1,7 +1,7 @@
 import { db } from './firebase'
 import {
   collection,
-  addDoc,
+  setDoc,
   getDocs,
   Timestamp,
   DocumentData,
@@ -9,17 +9,18 @@ import {
   updateDoc,
   deleteDoc,
 } from 'firebase/firestore'
-import type { BlogPost } from '@/types/blog' // ← This was missing
+import type { BlogPost } from '@/types/blog'
 
 // Save a new blog post
-export async function saveBlogPost(post: BlogPost) {
+export async function saveBlogPost(slug: string, post: BlogPost) {
   const newPost = {
     ...post,
     createdAt: Timestamp.now(),
     updatedAt: Timestamp.now(),
   }
 
-  return await addDoc(collection(db, 'blogPosts'), newPost)
+  const ref = doc(db, 'blogPosts', slug) // ← Use slug as document ID
+  return await setDoc(ref, newPost)
 }
 
 // Fetch all blog posts from Firestore

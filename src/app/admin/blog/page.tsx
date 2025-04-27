@@ -65,7 +65,24 @@ export default function AdminBlogPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+
+    if (name === 'title') {
+      // Auto-generate slug from title
+      const generatedSlug = value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-') // replace non-alphanumeric with hyphens
+        .replace(/(^-|-$)/g, '');    // remove leading/trailing hyphens
+      setForm((prev) => ({
+        ...prev,
+        title: value,
+        slug: generatedSlug,
+      }));
+    } else {
+      setForm((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -80,7 +97,7 @@ export default function AdminBlogPage() {
       if (isEditing && formId) {
         await updateBlogPost(formId, form);
       } else {
-        await saveBlogPost(form);
+        await saveBlogPost(form.slug, form);
       }
 
       setSubmitted(true);
@@ -157,9 +174,8 @@ export default function AdminBlogPage() {
               <input
                 name="slug"
                 value={form.slug}
-                onChange={handleChange}
-                className="w-full border rounded px-3 py-2 text-blue-800"
-                required
+                readOnly
+                className="w-full border rounded px-3 py-2 bg-gray-100 text-blue-800"
               />
             </div>
 
