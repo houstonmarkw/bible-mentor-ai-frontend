@@ -7,6 +7,7 @@ export function useSpeechToText(onResult: (text: string) => void) {
   const [rawTranscript, setRawTranscript] = useState('');
   const [error, setError] = useState('');
   const silenceTimer = useRef<NodeJS.Timeout | null>(null);
+  const manuallyStopped = useRef(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -31,20 +32,21 @@ export function useSpeechToText(onResult: (text: string) => void) {
 
       setRawTranscript(transcript);
       onResult(formatTranscript(transcript));
-
       resetSilenceTimer(recognition);
     };
 
     recognition.onend = () => {
-      if (listening) {
-        recognition.start();
+      if (!manuallyStopped.current && listening) {
+        recognition.start(); // Auto-restart if not manually stopped
       }
     };
 
     if (listening) {
+      manuallyStopped.current = false;
       recognition.start();
       resetSilenceTimer(recognition);
     } else {
+      manuallyStopped.current = true;
       recognition.stop();
       clearSilenceTimer();
     }
@@ -59,6 +61,7 @@ export function useSpeechToText(onResult: (text: string) => void) {
     clearSilenceTimer();
     silenceTimer.current = setTimeout(() => {
       setListening(false);
+      manuallyStopped.current = true;
       recognition.stop();
     }, 10000); // 10 seconds of silence = auto-stop
   }
@@ -80,9 +83,9 @@ function formatTranscript(text: string): string {
     .replace(/\bcomma\b/gi, ',')
     .replace(/\bquestion mark\b/gi, '?')
     .replace(/\bexclamation mark\b/gi, '!')
-    .replace(/\s+([.,!?])/g, '$1') // remove spaces before punctuation
-    .replace(/([.!?])\s*(\w)/g, (_, punc, letter) => `${punc} ${letter.toUpperCase()}`) // capitalize after punctuation
-    .replace(/^\s*\w/, (c) => c.toUpperCase()); // capitalize first word
+    .replace(/\s+([.,!?])/g, '$1')
+    .replace(/([.!?])\s*(\w)/g, (_, punc, letter) => `${punc} ${letter.toUpperCase()}`)
+    .replace(/^\s*\w/, (c) => c.toUpperCase());
 
   return formatted.trim();
 }
