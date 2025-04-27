@@ -18,15 +18,15 @@ export default function TrustPage() {
           We do <strong>not</strong> store tracking cookies, ad behavior, or anything unrelated to your walk with God.
         </p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mt-10 mb-2">You&apos;re in Control</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-10 mb-2">You're in Control</h2>
         <p className="text-gray-700 mb-6">
           Everything you create is yours:
         </p>
         <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
           <li>Edit, tag, or delete any entry</li>
           <li>Download a full copy of your journey anytime</li>
-          <li>Request permanent deletion&mdash;we&apos;ll honor it, no questions asked</li>
-          <li>Want a copy mailed to you? We&apos;ll send a USB if that&apos;s what it takes</li>
+          <li>Request permanent deletion&mdash;we'll honor it, no questions asked</li>
+          <li>Want a copy mailed to you? We'll send a USB if that's what it takes</li>
         </ul>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-10 mb-2">How We Protect Your Story</h2>
@@ -36,21 +36,40 @@ export default function TrustPage() {
 
         <h2 className="text-xl font-semibold text-gray-800 mt-10 mb-2">Why Memory Matters in Discipleship</h2>
         <p className="text-gray-700 mb-6">
-          Most apps start fresh every time you open them. Bible Mentor AI doesn&apos;t. We remember what you&apos;ve written&mdash;not to track you, but to help you grow.
+          Most apps start fresh every time you open them. Bible Mentor AI doesn't. We remember what you've written&mdash;not to track you, but to help you grow.
         </p>
         <p className="text-gray-700 mb-6 italic">
-          &quot;We store your story so you can see God&apos;s faithfulness&mdash;not so we can use it.&quot;
+          "We store your story so you can see God's faithfulness&mdash;not so we can use it."
         </p>
 
         <h2 className="text-xl font-semibold text-gray-800 mt-10 mb-2">From the Founder</h2>
         <p className="text-gray-700 mb-6">
-          &quot;Bible Mentor AI was born from my own desire to walk with Jesus in a more consistent, real, and anchored way. This app is my witness to the power of grace and the importance of remembering. We&apos;re not trying to build the biggest Christian app&mdash;we&apos;re trying to build the most faithful one.&quot;
+          "Bible Mentor AI was born from my own desire to walk with Jesus in a more consistent, real, and anchored way. This app is my witness to the power of grace and the importance of remembering. We're not trying to build the biggest Christian app&mdash;we're trying to build the most faithful one."
         </p>
         <p className="text-gray-700 mb-2 font-semibold">&mdash; Mark Houston, Founder</p>
 
         <p className="text-center text-sm text-gray-500 mt-12">
-          Trust is sacred. We&apos;re honored to earn yours.
+          Trust is sacred. We're honored to earn yours.
         </p>
+
+        {/* New Download Section */}
+        <div className="mt-16 p-6 bg-gray-50 rounded-lg">
+          <h3 className="text-2xl font-semibold text-blue-800 mb-4 text-center">See Our Full Commitment</h3>
+          <p className="text-gray-700 mb-6 text-center">
+            At Bible Mentor AI, trust is sacred — and transparency is part of that trust.<br />
+            We’ve put together a full Trust & Security Report to show exactly how we protect your memories, prayers, and reflections.
+          </p>
+          <div className="flex justify-center">
+            <a
+              href="/Bible_Mentor_AI_Trust_Report_2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-200"
+            >
+              Download the 2025 Trust & Security Report (PDF)
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
