@@ -49,15 +49,15 @@ export default function TrustPage() {
         <p className="text-gray-700 mb-2 font-semibold">&mdash; Mark Houston, Founder</p>
 
         <p className="text-center text-sm text-gray-500 mt-12">
-          Trust is sacred. We're honored to earn yours.
+          Trust is sacred. We are honored to earn yours.
         </p>
 
         {/* New Download Section */}
           <div className="mt-16 p-6 bg-gray-50 rounded-lg">
             <h3 className="text-2xl font-semibold text-blue-800 mb-4 text-center">See Our Full Commitment</h3>
             <p className="text-gray-700 mb-6 text-center">
-              At Bible Mentor AI, trust is sacred &mdash; and transparency is part of that trust.<br />
-              We&apos;ve put together a full Trust &amp; Security Report to show exactly how we protect your memories, prayers, and reflections.
+              At Bible Mentor AI, trust is sacred -; and transparency is part of that trust.<br />
+              We have put together a full Trust &amp; Security Report to show exactly how we protect your memories, prayers, and reflections.
             </p>
             <div className="flex justify-center">
               <a
