@@ -18,6 +18,17 @@ import type { BlogPost } from '@/types/blog';
 
 const RichTextEditor = dynamic(() => import('@/components/RichTextEditor'), { ssr: false });
 
+const getDisplayName = (email: string | null): string => {
+  switch (email) {
+    case 'markhouston@biblementorai.org':
+      return 'Mark Houston';
+    case 'ryandanley@biblementorai.org':
+      return 'Ryan Danley';
+    default:
+      return email ?? 'Unknown';
+  }
+};
+
 export default function AdminBlogPage() {
   const [form, setForm] = useState<BlogPost>({
     title: '',
@@ -102,26 +113,27 @@ export default function AdminBlogPage() {
     }
 
     try {
-        if (isEditing && formId) {
-          await updateBlogPost(formId, form);
-        } else {
-          await saveBlogPost(form.slug, {
-            ...form,
-            author: userEmail || 'Unknown',
-          });
-        }
-
-        setSubmitted(true);
-        setFormId(null);
-        setForm({
-          title: '',
-          slug: '',
-          summary: '',
-          date: new Date().toISOString().slice(0, 10),
-          author: 'Mark Houston', // optional default for UI only
-          category: '',
-          content: '',
+      if (isEditing && formId) {
+        await updateBlogPost(formId, form);
+      } else {
+        await saveBlogPost(form.slug, {
+          ...form,
+          author: getDisplayName(userEmail),
         });
+      }
+
+      setSubmitted(true);
+      setFormId(null);
+      setForm({
+        title: '',
+        slug: '',
+        summary: '',
+        date: new Date().toISOString().slice(0, 10),
+        author: getDisplayName(userEmail), // ← default for UI
+        category: '',
+        content: '',
+      });
+
       const posts = await fetchAllBlogPosts();
       setSavedPosts(posts as BlogPost[]);
     } catch (error) {
