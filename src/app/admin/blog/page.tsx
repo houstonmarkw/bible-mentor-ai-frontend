@@ -102,24 +102,26 @@ export default function AdminBlogPage() {
     }
 
     try {
-      if (isEditing && formId) {
-        await updateBlogPost(formId, form);
-      } else {
-        await saveBlogPost(form.slug, form);
-      }
+        if (isEditing && formId) {
+          await updateBlogPost(formId, form);
+        } else {
+          await saveBlogPost(form.slug, {
+            ...form,
+            author: userEmail || 'Unknown',
+          });
+        }
 
-      setSubmitted(true);
-      setFormId(null);
-      setForm({
-        title: '',
-        slug: '',
-        summary: '',
-        date: new Date().toISOString().slice(0, 10),
-        author: 'Mark Houston',
-        category: '',
-        content: '',
-      });
-
+        setSubmitted(true);
+        setFormId(null);
+        setForm({
+          title: '',
+          slug: '',
+          summary: '',
+          date: new Date().toISOString().slice(0, 10),
+          author: 'Mark Houston', // optional default for UI only
+          category: '',
+          content: '',
+        });
       const posts = await fetchAllBlogPosts();
       setSavedPosts(posts as BlogPost[]);
     } catch (error) {
